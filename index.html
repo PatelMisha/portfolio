@@ -1031,8 +1031,8 @@
         function animateFollower() {
             const targetX = mouseX - 20;
             const targetY = mouseY - 20;
-            followerX += (targetX - followerX) * 0.15;
-            followerY += (targetY - followerY) * 0.15;
+            followerX += (targetX - followerX) * 0.35;
+            followerY += (targetY - followerY) * 0.35;
             follower.style.left = followerX + 'px';
             follower.style.top = followerY + 'px';
             requestAnimationFrame(animateFollower);
