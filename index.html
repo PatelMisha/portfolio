@@ -1019,7 +1019,7 @@
         // Custom cursor
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursorFollower');
-        let mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
+        let mouseX = -100, mouseY = -100, followerX = -100, followerY = -100;
 
         document.addEventListener('mousemove', e => {
             mouseX = e.clientX;
@@ -1029,8 +1029,10 @@
         });
 
         function animateFollower() {
-            followerX += (mouseX - followerX - 20) * 0.14;
-            followerY += (mouseY - followerY - 20) * 0.14;
+            const targetX = mouseX - 20;
+            const targetY = mouseY - 20;
+            followerX += (targetX - followerX) * 0.15;
+            followerY += (targetY - followerY) * 0.15;
             follower.style.left = followerX + 'px';
             follower.style.top = followerY + 'px';
             requestAnimationFrame(animateFollower);
